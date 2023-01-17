@@ -2,4 +2,4 @@
 Create an LXC for NGinx
 
 
-curl -sL https://raw.githubusercontent.com/ian-mcpherson/lxc-nginx/blob/main/create.sh | bash -s
+curl -sL https://github.com/ian-mcpherson/lxc-nginx/create.sh | bash -s
