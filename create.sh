@@ -31,7 +31,7 @@ function error {
 }
 
 # Base raw github URL
-_raw_base="https://raw.githubusercontent.com//ian-mcpherson/lxc-nginx/blob/main"
+_raw_base="https://github.com/ian-mcpherson/lxc-nginx"
 # Operating system
 _os_type=ubuntu
 _os_version=22.10
