@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # This script was stolen from a 'unknown github user'
 # and nmodified to run an ubuntu based container
 
