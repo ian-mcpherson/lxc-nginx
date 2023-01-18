@@ -37,7 +37,7 @@ function error {
 _raw_base="https://raw.githubusercontent.com/ian-mcpherson/lxc-nginx/main"
 # Operating system
 _os_type=ubuntu
-_os_version=22.10
+_os_version=22.10-1
 # System architecture
 _arch=$(dpkg --print-architecture)
 
