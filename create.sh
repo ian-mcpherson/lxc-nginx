@@ -96,7 +96,7 @@ done
 # Check user settings or set defaults
 _ctid=${_ctid:-`pvesh get /cluster/nextid`}
 _cpu_cores=${_cpu_cores:-4}
-_disk_size=${_disk_size:8G}
+_disk_size=${_disk_size:-16G}
 _host_name=${_host_name:-nginxproxy}
 _bridge=${_bridge:-vmbr0}
 _memory=${_memory:-1024}
