@@ -28,4 +28,3 @@ if [ "$(command -v bash)" ]; then
 else
   sh "$TMP"
 fi
-
