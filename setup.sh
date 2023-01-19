@@ -14,7 +14,7 @@ if [ "$DISTRO" != "ubuntu" ] && [ "$DISTRO" != "debian" ]; then
 fi
 
 INSTALL_SCRIPT=$DISTRO
-if [ "$DISTRO" = "ubuntu" ]; then
+if [ "$DISTRO" = "debian" ]; then
   INSTALL_SCRIPT="debian"
 fi
 
