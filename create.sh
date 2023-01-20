@@ -40,7 +40,6 @@ _os_type=ubuntu
 _os_version=22.04
 # System architecture
 _arch=$(dpkg --print-architecture)
-function info { echo -e "\e[32m[info] $_arch\e[39m"; }
 
 # Create temp working directory
 _temp_dir=$(mktemp -d)
@@ -97,7 +96,7 @@ done
 # Check user settings or set defaults
 _ctid=${_ctid:-`pvesh get /cluster/nextid`}
 _cpu_cores=${_cpu_cores:-4}
-_disk_size=${_disk_size:-16G}
+_disk_size=${_disk_size:-8G}
 _host_name=${_host_name:-nginxproxy}
 _bridge=${_bridge:-vmbr0}
 _memory=${_memory:-1024}
