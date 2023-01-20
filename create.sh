@@ -37,9 +37,10 @@ function error {
 _raw_base="https://raw.githubusercontent.com/ian-mcpherson/lxc-nginx/main"
 # Operating system
 _os_type=ubuntu
-_os_version=20.04
+_os_version=22.04
 # System architecture
 _arch=$(dpkg --print-architecture)
+function info { echo -e "\e[32m[info] $_arch\e[39m"; }
 
 # Create temp working directory
 _temp_dir=$(mktemp -d)
@@ -195,5 +196,5 @@ EOF
 info "Setting up LXC container..."
 pct start $_ctid
 sleep 3
-# pct exec $_ctid -- sh -c "wget --no-cache -qO - $_raw_base/setup.sh | sh"
-pct exec $_ctid -- sh -c "wget --no-cache -qO - https://sh.rustup.rs | sh; source $HOME/.cargo/env; wget --no-cache -qO - $_raw_base/setup.sh | sh"
+pct exec $_ctid -- sh -c "wget --no-cache -qO - $_raw_base/setup.sh | sh"
+# pct exec $_ctid -- sh -c "wget --no-cache -qO - https://sh.rustup.rs | sh; source $HOME/.cargo/env; wget --no-cache -qO - $_raw_base/setup.sh | sh"
