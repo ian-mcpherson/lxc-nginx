@@ -31,7 +31,7 @@ function error {
 }
 
 # Base raw github URL
-_raw_base="https://raw.githubusercontent.com/ej52/proxmox-scripts/main/lxc/nginx-proxy-manager"
+_raw_base="https://raw.githubusercontent.com/ian-mcpherson/lxc-nginx/main"
 # Operating system
 _os_type=ubuntu
 _os_version=22.10
@@ -92,12 +92,12 @@ done
 
 # Check user settings or set defaults
 _ctid=${_ctid:-`pvesh get /cluster/nextid`}
-_cpu_cores=${_cpu_cores:-1}
-_disk_size=${_disk_size:-2G}
-_host_name=${_host_name:-nginx-proxy-manager}
+_cpu_cores=${_cpu_cores:-4}
+_disk_size=${_disk_size:-8G}
+_host_name=${_host_name:-proxymanager}
 _bridge=${_bridge:-vmbr0}
-_memory=${_memory:-512}
-_swap=${_swap:-0}
+_memory=${_memory:-1024}
+_swap=${_swap:-1024}
 _storage=${_storage:-local-lvm}
 _storage_template=${_storage_template:-local}
 
