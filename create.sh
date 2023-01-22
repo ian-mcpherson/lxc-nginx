@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# This script was stolen from a 'unknown github user'
-# and nmodified to run an ubuntu based container
-
 set -Eeuo pipefail
 
 trap error ERR
@@ -34,10 +31,10 @@ function error {
 }
 
 # Base raw github URL
-_raw_base="https://raw.githubusercontent.com/ian-mcpherson/lxc-nginx/main"
+_raw_base="https://raw.githubusercontent.com/ej52/proxmox-scripts/main/lxc/nginx-proxy-manager"
 # Operating system
 _os_type=ubuntu
-_os_version=22.04
+_os_version=22.10
 # System architecture
 _arch=$(dpkg --print-architecture)
 
@@ -95,12 +92,12 @@ done
 
 # Check user settings or set defaults
 _ctid=${_ctid:-`pvesh get /cluster/nextid`}
-_cpu_cores=${_cpu_cores:-4}
-_disk_size=${_disk_size:-8G}
-_host_name=${_host_name:-nginxproxy}
+_cpu_cores=${_cpu_cores:-1}
+_disk_size=${_disk_size:-2G}
+_host_name=${_host_name:-nginx-proxy-manager}
 _bridge=${_bridge:-vmbr0}
-_memory=${_memory:-1024}
-_swap=${_swap:-1024}
+_memory=${_memory:-512}
+_swap=${_swap:-0}
 _storage=${_storage:-local-lvm}
 _storage_template=${_storage_template:-local}
 
@@ -129,7 +126,7 @@ echo ""
 
 sleep 10
 
-# Download latest Ubuntu LXC template
+# Download latest Alpine LXC template
 info "Updating LXC template list..."
 pveam update &>/dev/null
 
@@ -196,4 +193,3 @@ info "Setting up LXC container..."
 pct start $_ctid
 sleep 3
 pct exec $_ctid -- sh -c "wget --no-cache -qO - $_raw_base/setup.sh | sh"
-# pct exec $_ctid -- sh -c "wget --no-cache -qO - https://sh.rustup.rs | sh; source $HOME/.cargo/env; wget --no-cache -qO - $_raw_base/setup.sh | sh"
