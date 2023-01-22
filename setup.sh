@@ -16,15 +16,15 @@ fi
 INSTALL_SCRIPT=$DISTRO
 if [ "$DISTRO" = "ubuntu" ]; then
   INSTALL_SCRIPT="debian"
-fi
+fibash
 
 rm -rf $TMP
 wget -O "$TMP" "$URL/$INSTALL_SCRIPT.sh"
 
 chmod +x "$TMP"
 
-#if [ "$(command -v bash)" ]; then
-#  $(command -v sudo) bash "$TMP"
-#else
-#  sh "$TMP"
-#fi
+if [ "$(command -v bash)" ]; then
+  $(command -v sudo) bash "$TMP"
+else
+  sh "$TMP"
+fi
