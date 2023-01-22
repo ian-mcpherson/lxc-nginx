@@ -16,7 +16,7 @@ fi
 INSTALL_SCRIPT=$DISTRO
 if [ "$DISTRO" = "ubuntu" ]; then
   INSTALL_SCRIPT="debian"
-fibash
+fi
 
 rm -rf $TMP
 wget -O "$TMP" "$URL/$INSTALL_SCRIPT.sh"
